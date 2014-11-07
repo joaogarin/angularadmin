@@ -15,6 +15,14 @@ angular.module("app.controllers", []).controller("AdminAppCtrl", ["$scope", "$lo
                 user_name: "Jane Doe"
             };
 
+            $(window).load(function(){
+
+                $('.loader').addClass("loaded");
+                $('.page-loading-overlay').addClass("loaded");
+                $('.load_circle_wrapper').addClass("loaded");
+
+            });
+
 
         }
     ]).controller("NavCtrl", ["$scope",
@@ -29,9 +37,7 @@ angular.module("app.controllers", []).controller("AdminAppCtrl", ["$scope", "$lo
     ]).controller("DashboardCtrl", ["$scope",
         function($scope) {
 
-            $('.loader').addClass("loaded");
-            $('.page-loading-overlay').addClass("loaded");
-            $('.load_circle_wrapper').addClass("loaded");
+
         }
     ]);
 
