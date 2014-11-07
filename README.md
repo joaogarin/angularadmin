@@ -3,7 +3,7 @@
 Uses several charing libraries including : 
 
 Chartjs<br/>
-Flotcharts<br/><br/>
+Flotcharts<br/>
 morris charts<br/>
 
 It is built using bootstrap with several custom features.
