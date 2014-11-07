@@ -1,4 +1,4 @@
-An angular js admin app.
+<h3>An angular js admin app.</h3>
 
 Uses several charing libraries including : 
 
@@ -10,6 +10,6 @@ It is built using bootstrap with several custom features.
 
 Also included are grunt configurations for development testing and production deployment.
 
-Status : 
+<h4>Status : </h4>
 
 Still being worked on
