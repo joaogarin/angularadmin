@@ -1,0 +1,207 @@
+<div class="page page-charts" >
+
+    <section data-ng-controller="chartingCtrl">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{easypie1.name}}</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <div easypiechart options="easypie1.options" percent="easypie1.percent" class="easypiechart">
+                            <span class="pie-percent" ng-bind="easypie1.percent"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{easypie2.name}}</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <div easypiechart options="easypie2.options" percent="easypie2.percent" class="easypiechart">
+                            <span class="pie-percent" ng-bind="easypie2.percent"></span>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{easypie3.name}}</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <div easypiechart options="easypie3.options" percent="easypie3.percent" class="easypiechart">
+                            <span class="pie-percent" ng-bind="easypie3.percent"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section data-ng-controller="gaugeCtrl">
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Gauge Chart</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <canvas data-gauge-chart
+                                data-gauge-data="gauge1.gaugeData"
+                                data-gauge-options="gauge1.gaugeOptions"
+                                style="width: 220px; height: 110px; "
+                                ></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Gauge Chart</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <canvas data-gauge-chart
+                                data-gauge-data="gauge2.gaugeData"
+                                data-gauge-options="gauge2.gaugeOptions"
+                                style="width: 220px; height: 110px; "
+                                ></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Gauge Chart</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <canvas data-gauge-chart
+                                data-gauge-data="gauge3.gaugeData"
+                                data-gauge-options="gauge3.gaugeOptions"
+                                style="width: 220px; height: 110px; "
+                                ></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-ng-controller="sparklineCtrl">
+
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <div class="panel small-box-icon text-center">
+                    <span data-sparkline
+                          data-spark-data="simpleChart1.sparkData"
+                          data-spark-options="simpleChart1.sparkOptions"
+                            ></span>
+                    <h5>
+                        Simple chart one
+                    </h5>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="panel small-box-icon text-center">
+                    <span data-sparkline
+                          data-spark-data="simpleChart2.sparkData"
+                          data-spark-options="simpleChart2.sparkOptions"
+                            ></span>
+                    <h5>
+                        A small bar chart
+                    </h5>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+
+                <div class="panel small-box-icon text-center">
+                    <span data-sparkline
+                          data-spark-data="simpleChart3.sparkData"
+                          data-spark-options="simpleChart3.sparkOptions"
+                            ></span>
+                    <h5>
+                        Simple chart one
+                    </h5>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+
+                <div class="panel small-box-icon text-center">
+                    <span data-sparkline
+                          data-spark-data="tristateChart1.sparkData"
+                          data-spark-options="tristateChart1.sparkOptions"
+                            ></span>
+                    <h5>
+                        Tristate chart
+                    </h5>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section data-ng-controller="sparklineCtrl">
+
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Line Charts</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div data-sparkline
+                             data-spark-data="largeChart1.sparkData"
+                             data-spark-options="largeChart1.sparkOptions"
+                              ></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Bar Charts</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <div data-sparkline
+                             data-spark-data="largeChart2.sparkData"
+                             data-spark-options="largeChart2.sparkOptions"
+                              ></div>
+                    </div>
+                </div>            
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Pie Charts</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <div data-sparkline
+                             data-spark-data="largeChart3.sparkData"
+                             data-spark-options="largeChart3.sparkOptions"
+                              ></div>
+                    </div>
+                </div>            
+            </div>
+        </div>
+
+    </section>
+
+
+</div>

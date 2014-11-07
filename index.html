@@ -1,0 +1,121 @@
+<!doctype html>
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Admin angular theme</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+        <!-- Include Fonts from the theme fonts directory -->
+        <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="fonts/weather-icons/css/weather-icons.min.css">
+
+        <!-- Include Jquery in the vendor folder -->
+        <script src="scripts/vendor/jquery-2.1.1.min.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <!-- Theme's own CSS file -->
+        <link rel="stylesheet" href="styles/main.css">
+
+    </head>
+    <body data-ng-app="app" id="app" data-custom-background="" data-off-canvas-nav="" data-ng-controller="AdminAppCtrl">
+
+        <div>
+            <div data-ng-hide="checkIfOwnPage()" data-ng-cloak="" class="no-print">
+
+
+                <aside data-ng-include=" 'app/views/navigation.html' " id="nav-container"></aside>
+            </div>
+
+            <div class="view-container">
+
+                <div data-ng-hide="checkIfOwnPage()" data-ng-cloak="" class="no-print">
+                    <section data-ng-include=" 'app/views/header.html' " id="header" class="top-header"></section>
+                </div>
+
+                <section data-ng-view="" id="content" class="animate-fade-up"></section>
+            </div>
+        </div>
+        <div class="page-loading-overlay"> <div class="loader-2"></div> </div>
+
+
+        <div class="loader">
+            <div class="green sd0"></div>
+            <div class="red sd05"></div>
+            <div class="blue sd1"></div>
+            <div class="yellow sd15"></div>
+        </div>
+
+        <div class="load_circle_wrapper">
+
+            <div class="loader_circle">
+                <p></p>
+            </div>
+           <!-- <div class="logo-icon-loading_wrapp">
+                <i class="logo-icon logo-icon-loading fa fa-cube fa-2x"></i>
+            </div>-->
+        </div>
+
+
+
+
+
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+        <script src="scripts/vendor/angular.min.js"></script>
+
+        <script src="scripts/vendor/angular-animate.min.js"></script>
+
+        <script src="scripts/vendor/angular-route.min.js"></script>
+
+        <script src="scripts/vendor/underscore-min.js"></script>
+
+        <script src="scripts/vendor/rocha.js"></script>
+
+        <script src="scripts/vendor/raphael.min.js"></script>
+
+        <script src="scripts/vendor/morris.min.js"></script>
+
+        <script src="scripts/vendor/flot_compiled.js"></script>
+
+        <script src="scripts/vendor/Chart.min.js"></script>
+
+        <script src="scripts/vendor/other_charts.js"></script>
+
+        <script src="scripts/vendor/angular-wizard.js"></script>
+
+        <script src="scripts/vendor/angular-ui-tree.js"></script>
+
+        <script src="scripts/vendor/jquery.vmap.min.js"></script>
+
+        <script src="scripts/extras.js"></script>
+
+        <!--Uncomment for deployment using Grunt-->
+        <!--<script type="text/javascript" src="dist/app.js"></script>-->
+
+
+        <!--Comment these scripts for deployment using Grunt-->
+        <script src="app/app.js"></script>
+
+        <script src="app/controllers.js"></script>
+
+        <script src="app/services.js"></script>
+
+        <script src="app/directives.js"></script>
+
+
+
+    </body>
+</html>

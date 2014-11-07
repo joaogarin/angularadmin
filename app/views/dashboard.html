@@ -1,0 +1,487 @@
+<div class="page page-dashboard" data-ng-controller="DashboardCtrl">
+
+    <section>
+
+        <div class="row">
+            <div class="col-sm-4" ng-controller="chartingCtrl">
+
+                <div>
+                    <div class="panel panel-default">
+                        <!--<div class="panel-heading">
+                            <h3 class="panel-title">{{easypie1.name}}</h3>
+                        </div>-->
+                        <div class="panel-body text-center">
+
+                            <div class="pull-left">
+
+                                <a class="icon-dashboard bg-success">
+                                    <i class="fa fa-cloud">
+
+                                    </i>
+                                </a>
+                            </div>
+                            <div class="right-info">
+
+                                <div data-ng-controller="countTo">
+                                    <h3>
+                                        <span class="countTo_small" count-to="{{countersmall1dash.countTo}}" value="{{countersmall1dash.countFrom}}" duration="2"></span>
+                                    </h3>
+                                    <p class="text-muted">Registrations</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="panel panel-default">
+                        <!--<div class="panel-heading">
+                            <h3 class="panel-title">{{easypie2.name}}</h3>
+                        </div>-->
+                        <div class="panel-body text-center">
+
+
+                            <div class="pull-left">
+                                <a class="icon-dashboard bg-warning">
+                                    <i class="fa fa-envelope-o">
+
+                                    </i>
+                                </a>
+                            </div>
+                            <div class="right-info">
+                                <div data-ng-controller="countTo">
+                                    <h3>
+                                        <span class="countTo_small" count-to="{{countersmall2dash.countTo}}" value="{{countersmall2dash.countFrom}}" duration="2"></span>
+                                    </h3>
+                                    <p class="text-muted">Emails</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="panel panel-default">
+                        <!--<div class="panel-heading">
+                            <h3 class="panel-title">{{easypie3.name}}</h3>
+                        </div>-->
+                        <div class="panel-body text-center">
+
+
+                            <div class="pull-left">
+                                <a class="icon-dashboard bg-danger">
+                                    <i class="fa fa-database">
+
+                                    </i>
+                                </a>
+                            </div>
+                            <div class="right-info">
+                                <div data-ng-controller="countTo">
+                                    <h3>
+                                        <span class="countTo_small" count-to="{{countersmall3dash.countTo}}" value="{{countersmall3dash.countFrom}}" duration="2"></span>
+                                    </h3>
+                                    <p class="text-muted">Databases</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8" ng-controller="morrisChartCtrl">
+
+                <section class="panel panel-default">
+                    <!--<div class="panel-heading"><i class="fa fa-list panel-ico"></i>Line Chart</div>-->
+                    <div class="panel-body">
+                        <div morris-chart
+                             data-data="comboData"
+                             data-type="line"
+                             data-xkey="year"
+                             data-ykeys='["a", "b", "c"]'
+                             data-labels='["Value A", "Value B", "Value C"]'
+                             data-line-colors='["#2693E9","#F5862C","#43B040"]'
+                             data-line-width="3"
+                                ></div>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="row" ng-controller="chartingCtrl">
+
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <!--<div class="panel-heading">
+                        <h3 class="panel-title">{{easypie1.name}}</h3>
+                    </div>-->
+                    <div class="panel-body text-center">
+
+                        <div class="pull-left">
+                            <div easypiechart options="easypiesmall1.options" percent="easypiesmall1.percent" class="easypiechartsmall">
+                                    <span class="pie-percent">
+                                        <div class="countTo_small" data-ng-controller="countTo">
+                                            <span count-to="{{countersmall1.countTo}}" value="{{countersmall1.countFrom}}" duration="2"></span>%
+                                        </div>
+
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="right-info">
+
+                            <p class="text-muted">Registrations / Unique visitors</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <!--<div class="panel-heading">
+                        <h3 class="panel-title">{{easypie2.name}}</h3>
+                    </div>-->
+                    <div class="panel-body text-center">
+
+
+                        <div class="pull-left">
+                            <div easypiechart options="easypiesmall2.options" percent="easypiesmall2.percent" class="easypiechartsmall">
+                                    <span class="pie-percent">
+                                         <div class="countTo_small" data-ng-controller="countTo">
+                                             <span count-to="{{countersmall2.countTo}}" value="{{countersmall2.countFrom}}" duration="2"></span>%
+                                         </div>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="right-info">
+                            <p class="text-muted">Sales / Registered user</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <!--<div class="panel-heading">
+                        <h3 class="panel-title">{{easypie3.name}}</h3>
+                    </div>-->
+                    <div class="panel-body text-center">
+
+
+                        <div class="pull-left">
+                            <div easypiechart options="easypiesmall3.options" percent="easypiesmall3.percent" class="easypiechartsmall">
+                                    <span class="pie-percent">
+                                         <div class="countTo_small" data-ng-controller="countTo">
+                                             <span count-to="{{countersmall3.countTo}}" value="{{countersmall3.countFrom}}" duration="2"></span>%
+                                         </div>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="right-info">
+                            <p class="text-muted">Dropouts on checkout</p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+
+        <div class="row">
+
+            <div class="col-sm-12" data-ng-controller="flotChartCtrl">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-body">
+                        <div data-flot-chart
+                             data-data="line1.data"
+                             data-options="line1.options"
+                             style="width: 100%; height: 300px;"
+                                ></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section data-ng-controller="gaugeCtrl">
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Site speed</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <canvas data-gauge-chart
+                                data-gauge-data="gauge1.gaugeData"
+                                data-gauge-options="gauge1.gaugeOptions"
+                                style="width: 220px; height: 110px; "
+                                ></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Feed updates</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <canvas data-gauge-chart
+                                data-gauge-data="gauge2.gaugeData"
+                                data-gauge-options="gauge2.gaugeOptions"
+                                style="width: 220px; height: 110px; "
+                                ></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Compression span</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <canvas data-gauge-chart
+                                data-gauge-data="gauge3.gaugeData"
+                                data-gauge-options="gauge3.gaugeOptions"
+                                style="width: 220px; height: 110px; "
+                                ></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+
+        <div class="row">
+            <div class="col-sm-6" ng-controller="morrisChartCtrl">
+                <section class="panel panel-default">
+                    <!--<div class="panel-heading"><i class="fa fa-list panel-ico"></i>Line Chart</div>-->
+                    <div class="panel-body">
+                        <div morris-chart
+                             data-data="comboData"
+                             data-type="line"
+                             data-xkey="year"
+                             data-ykeys='["a", "b", "c"]'
+                             data-labels='["Value A", "Value B", "Value C"]'
+                             data-line-colors='["#2693E9","#F5862C","#43B040"]'
+                             data-line-width="3"
+                                ></div>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="col-sm-6" ng-controller="morrisChartCtrl">
+
+                <section class="panel panel-default">
+                    <!--<div class="panel-heading"><i class="fa fa-list panel-ico"></i>Bar Chart</div>-->
+                    <div class="panel-body">
+                        <div morris-chart
+                             data-data="comboData"
+                             data-type="bar"
+                             data-xkey="year"
+                             data-ykeys='["a", "b", "c"]'
+                             data-labels='["Value A", "Value B", "Value C"]'
+                             data-bar-colors='["#2693E9","#F5862C","#43B040"]'
+                                ></div>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section data-ng-controller="chartingCtrl">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{easypie1.name}}</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <div easypiechart options="easypie1.options" percent="easypie1.percent" class="easypiechart">
+                            <span class="pie-percent" ng-bind="easypie1.percent"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{easypie2.name}}</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <div easypiechart options="easypie2.options" percent="easypie2.percent" class="easypiechart">
+                            <span class="pie-percent" ng-bind="easypie2.percent"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{easypie3.name}}</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <div easypiechart options="easypie3.options" percent="easypie3.percent" class="easypiechart">
+                            <span class="pie-percent" ng-bind="easypie3.percent"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- stats -->
+    <div class="row" data-ng-controller="sparklineCtrl">
+        <div class="col-lg-3 col-xsm-6">
+            <div class="panel small-box-icon">
+                <span class="box-icon bg-success">
+                    <span data-sparkline
+                          data-spark-data="simpleChart2info.sparkData"
+                          data-spark-options="simpleChart2info.sparkOptions"
+                            ></span>
+                </span>
+                <div class="box-info">
+                    <p class="size-h2">25</p>
+                    <p class="text-muted">Arriving messages</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xsm-6">
+            <div class="panel small-box-icon">
+                <span class="box-icon bg-info">
+                    <span data-sparkline
+                          data-spark-data="simpleChart2info.sparkData"
+                          data-spark-options="simpleChart2info.sparkOptions"
+                            ></span>
+                </span>
+                <div class="box-info">
+                    <p class="size-h2">312</p>
+                    <p class="text-muted">Connected users</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xsm-6">
+            <div class="panel small-box-icon">
+                <span class="box-icon bg-warning">
+                    <span data-sparkline
+                          data-spark-data="simpleChart2info.sparkData"
+                          data-spark-options="simpleChart2info.sparkOptions"
+                            ></span>
+                </span>
+                <div class="box-info">
+                    <p class="size-h2">1,450</p>
+                    <p class="text-muted">Driving income</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xsm-6">
+            <div class="panel small-box-icon">
+                <span class="box-icon bg-danger">
+                   <span data-sparkline
+                         data-spark-data="simpleChart2info.sparkData"
+                         data-spark-options="simpleChart2info.sparkOptions"
+                           ></span>
+                </span>
+                <div class="box-info">
+                    <p class="size-h2">562</p>
+                    <p class="text-muted">New customers / segment</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- end stats -->
+
+
+    <div class="panel panel-default">
+        <!--<div class="panel-heading"><strong><i class="fa fa-list panel-ico"></i>Table</strong></div>-->
+        <div class="panel-body table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Task</th>
+                        <th>Completion</th>
+                        <th>Assigned to</th>
+                        <th>Completion %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><span class="color-success"><i class="fa fa-level-up"></i></span> TWLT</td>
+                        <td><span class="label label-info">Pending</span></td>
+                        <td>John Doe</td>
+                        <td><progressbar class="progressbar-xs no-margin" value="55"></progressbar>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><span class="color-success"><i class="fa fa-level-up"></i></span> A16Z</td>
+                        <td><span class="label label-primary">Due</span></td>
+                        <td>Carol Simmerman</td>
+                        <td><progressbar class="progressbar-xs no-margin" value="34" type="success"></progressbar></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><span class="color-warning"><i class="fa fa-level-down"></i></span> DARK</td>
+                        <td><span class="label label-success">Due</span></td>
+                        <td>Joselie Hanna</td>
+                        <td><progressbar class="progressbar-xs no-margin" value="68" type="info"></progressbar></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><span class="color-info"><i class="fa fa-level-up"></i></span> Q300</td>
+                        <td><span class="label label-danger">Blocked</span></td>
+                        <td>Johane Bayer</td>
+                        <td><progressbar class="progressbar-xs no-margin" value="52" type="warning"></progressbar></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><span class="color-danger"><i class="fa fa-level-down"></i></span> RVNG</td>
+                        <td><span class="label label-warning">Suspended</span></td>
+                        <td>Donnavon Franklin</td>
+                        <td><progressbar class="progressbar-xs no-margin" value="77" type="danger"></progressbar></td></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><span class="color-info"><i class="fa fa-level-down"></i></span> FDSA</td>
+                        <td><span class="label label-info">Suspended</span></td>
+                        <td>Jane Modrid</td>
+                        <td><progressbar class="progressbar-xs no-margin" value="55" type="success"></progressbar></td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+  

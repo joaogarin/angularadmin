@@ -1,0 +1,83 @@
+
+<!-- Logo -->
+<div class="logo" data-ng-controller="AdminAppCtrl">
+    <a href="#/">
+        <i class="logo-icon fa fa-cube"></i>
+        <span>{{info.theme_name}}</span>
+    </a>
+</div>
+<div id="nav-wrapper">
+    <ul id="nav"
+        data-ng-controller="NavCtrl"
+        data-slim-scroll
+        data-collapse-nav
+        data-highlight-active>
+        <li><a href="#/dashboard"> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li>
+            <a href="#/ui"><i class="fa fa-magic"></i><span>Ui Elements</span></a>
+            <ul>
+                <li><a href="#/ui/buttons"><i class="fa fa-angle-right"></i><span> Buttons</span></a></span></li>
+                <li><a href="#/ui/typography"><i class="fa fa-angle-right"></i><span> Typography</span></a></li>
+                <li><a href="#/ui/widgets"><i class="fa fa-angle-right"></i><span>Widgets </span><span class="badge badge-success">Trendy</span></a></li>
+                <li><a href="#/ui/grids"><i class="fa fa-angle-right"></i><span> Grids</span></a></li>
+                <li><a href="#/ui/icons"><i class="fa fa-angle-right"></i><span> Icons</span></a></li>
+                <li><a href="#/ui/components"><i class="fa fa-angle-right"></i><span> Bootstrap UI</span> <span class="badge badge-info">new</span></a></li>
+                <!--<li><a href="#/ui/timeline"><i class="fa fa-angle-right"></i> Timeline</a></li>-->
+                <li><a href="#/ui/nested-lists"><i class="fa fa-angle-right"></i><span>Nested Lists</span></a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#/pages"><i class="fa fa-file-text"></i><span> Custom Pages </span></a>
+            <ul>
+                <li><a href="#/pages/signin"><i class="fa fa-angle-right"></i><span> Sign in</span></a></li>
+                <li><a href="#/pages/signup"><i class="fa fa-angle-right"></i><span> Sign up</span></a></li>
+                <li><a href="#/pages/forgot"><i class="fa fa-angle-right"></i><span> Request password</span></a></li>
+                <li><a href="#/pages/profile"><i class="fa fa-angle-right"></i><span> User page</span></a></li>
+                <li><a href="#/pages/404"><i class="fa fa-angle-right"></i><span> 404</span></a></li>
+                <li><a href="#/pages/500"><i class="fa fa-angle-right"></i><span> 500</span></a></li>
+                <li><a href="#/pages/blank"><i class="fa fa-angle-right"></i><span> Blank page</span></a></li>
+                <li><a href="#/pages/contact"><i class="fa fa-angle-right"></i><span> Contact</span></a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#/table"><i class="fa fa-table"></i><span> Table styles</span></a>
+            <ul>
+                <li><a href="#/tables/static"><i class="fa fa-angle-right"></i><span> Normal tables</span></a></li>
+                <li><a href="#/tables/responsive"><i class="fa fa-angle-right"></i><span> Responsive tables</span></a></li>
+                <li><a href="#/tables/dynamic"><i class="fa fa-angle-right"></i><span> Dynamic tables</span></a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#/form"><i class="fa fa-list-alt"></i><span> Form elements</span></a>
+            <ul>
+                <li><a href="#/forms/elements"><i class="fa fa-angle-right"></i><span> Form elements</span></a></li>
+                <li><a href="#/forms/validation"><i class="fa fa-angle-right"></i><span> Form validations</span></a></li>
+                <li><a href="#/forms/wizard"><i class="fa fa-angle-right"></i><span>Form wizard</span></a></li>
+                <li><a href="#/forms/layouts"><i class="fa fa-angle-right"></i><span> Form layouts</span></a></li>
+            </ul>
+        </li>
+       <li>
+            <a href="#/charts"><i class="fa fa-bar-chart"></i><span> Charting</span></a>
+            <ul>
+                <li><a href="#/charts/morris"><i class="fa fa-angle-right"></i><span>Morris Charts</span></a></li>
+                <li><a href="#/charts/chartjs"><i class="fa fa-angle-right"></i><span>Chart js</span></a></li>
+                <li><a href="#/charts/flot"><i class="fa fa-angle-right"></i><span>Flot Charts</span></a></li>
+                <li><a href="#/charts/others"><i class="fa fa-angle-right"></i><span>Other Charts</span></a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#/maps"><i class="fa fa-map-marker"></i><span> Maps</span></a>
+            <ul>
+                <li><a href="#/maps/gmap"><i class="fa fa-angle-right"></i><span> Google</span></a></li>
+                <li><a href="#/maps/jqvmap"><i class="fa fa-angle-right"></i><span> Vector</span></a></li>
+            </ul>
+        </li>
+        <li class="nav-task">
+            <a href="#/tasks">
+                <i class="fa fa-check-square-o"></i><span> Tasks</span>
+                <span class="badge badge-danger main-badge">{{navInfo.tasks_number}}</span>
+            </a>
+        </li>
+    </ul>
+
+</div>

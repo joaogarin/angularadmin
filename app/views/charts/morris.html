@@ -1,0 +1,148 @@
+<div class="page page-charts" data-ng-controller="morrisChartCtrl">
+
+    <div class="row">
+        <div class="col-md-6">
+            <section class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-list panel-ico"></i>Line Chart</div>
+                <div class="panel-body">
+                    <div morris-chart
+                         data-data="simpleData"
+                         data-type="line"
+                         data-xkey="year"
+                         data-ykeys='["value"]'
+                         data-labels='["Value"]'
+                         data-line-colors='["#2693E9"]'
+                         data-line-width="3"
+                         ></div>
+                </div>
+            </section>            
+        </div>
+        <div class="col-md-6">
+            <section class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-list panel-ico"></i>Area Chart</div>
+                <div class="panel-body">
+                    <div morris-chart
+                         data-data="simpleData"
+                         data-type="area"
+                         data-xkey="year"
+                         data-ykeys='["value"]'
+                         data-labels='["Value A"]'
+                         data-line-colors='["#2693E9"]'
+                         data-line-width="3"
+                         ></div>
+                </div>
+            </section>              
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <section class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-list panel-ico"></i>Line Chart</div>
+                <div class="panel-body">
+                    <div morris-chart
+                         data-data="comboData"
+                         data-type="line"
+                         data-xkey="year"
+                         data-ykeys='["a", "b", "c"]'
+                         data-labels='["Value A", "Value B", "Value C"]'
+                         data-line-colors='["#2693E9","#F5862C","#43B040"]'
+                         data-line-width="3"
+                         ></div>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-6">
+            <section class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-list panel-ico"></i>Area Chart</div>
+                <div class="panel-body">
+                    <div morris-chart
+                         data-data="comboData"
+                         data-type="area"
+                         data-xkey="year"
+                         data-ykeys='["a", "b", "c"]'
+                         data-labels='["Value A", "Value B", "Value C"]'
+                         data-line-colors='["#2693E9","#F5862C","#43B040"]'
+                         data-line-width="3"
+                         ></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <section class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-list panel-ico"></i>Bar Chart</div>
+                <div class="panel-body">
+                    <div morris-chart
+                         data-data="comboData"
+                         data-type="bar"
+                         data-xkey="year"
+                         data-ykeys='["a", "b", "c"]'
+                         data-labels='["Value A", "Value B", "Value C"]'
+                         data-bar-colors='["#2693E9","#F5862C","#43B040"]'
+                         ></div>
+                </div>
+            </section>            
+        </div>
+        <div class="col-md-6">
+            <section class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-list panel-ico"></i>Stacked Bar Chart</div>
+                <div class="panel-body">
+                    <div morris-chart
+                         data-data="comboData"
+                         data-type="bar"
+                         data-xkey="year"
+                         data-ykeys='["a", "b", "c"]'
+                         data-labels='["Value A", "Value B", "Value C"]'
+                         data-bar-colors='["#2693E9","#F5862C","#43B040"]'
+                         data-stacked="true"
+                         ></div>
+                </div>
+            </section>            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <section class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-list panel-ico"></i>Donut Chart</div>
+                <div class="panel-body">
+                    <div morris-chart
+                         data-data="donutData"
+                         data-type="donut"
+                         data-xkey="year"
+                         ></div>
+                </div>
+            </section>              
+        </div>
+        <div class="col-md-4">
+            <section class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-list panel-ico"></i>Colorful Donut Chart</div>
+                <div class="panel-body">
+                    <div morris-chart
+                         data-data="donutData"
+                         data-type="donut"
+                         data-xkey="year"
+                         data-colors='["#2693E9","#F5862C","#43B040","#E87352"]'
+                         ></div>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-4">
+            <section class="panel panel-default">
+                <div class="panel-heading"><i class="fa fa-list panel-ico"></i>Formatted Donut Chart</div>
+                <div class="panel-body">
+                    <div morris-chart
+                         data-data="donutData"
+                         data-type="donut"
+                         data-xkey="year"
+                         data-formatter="return '$' + y;"
+                         ></div>
+                </div>
+            </section>            
+        </div>
+    </div>
+</div>
