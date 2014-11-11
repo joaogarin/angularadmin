@@ -1,0 +1,4 @@
+#Ignore dis folder and node_modules folder
+
+dist/
+node_modules
