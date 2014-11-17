@@ -3,7 +3,20 @@
  Initialize the Angular App
  **************************/
 
-angular.module("app", ["ngRoute", "ngAnimate", "ui.bootstrap", "easypiechart", "mgo-angular-wizard", "textAngular", "ui.tree", "ngMap", "ngTagsInput", "app.ui.ctrls", "app.ui.services", "app.controllers", "app.directives", "app.form.validation", "app.ui.form.ctrls", "app.ui.form.directives", "app.tables", "app.map", "app.task", "app.chart.ctrls", "app.chart.directives","countTo"]).config(["$routeProvider",
+var app = angular.module("app", ["ngRoute", "ngAnimate", "ui.bootstrap", "easypiechart", "mgo-angular-wizard", "textAngular", "ui.tree", "ngMap", "ngTagsInput", "app.ui.ctrls", "app.ui.services", "app.controllers", "app.directives", "app.form.validation", "app.ui.form.ctrls", "app.ui.form.directives", "app.tables", "app.map", "app.task", "app.chart.ctrls", "app.chart.directives","countTo"]).run(["$rootScope", "$location",
+    function ($rootScope, $location) {
+
+        $(window).load(function(){
+
+            setTimeout(function(){
+                $('.loader').addClass("loaded");
+                $('.page-loading-overlay').addClass("loaded");
+                $('.load_circle_wrapper').addClass("loaded");
+            },1000);
+
+        });
+
+    }] ).config(["$routeProvider",
     function($routeProvider) {
         return $routeProvider.when("/", {
             redirectTo: "/dashboard"

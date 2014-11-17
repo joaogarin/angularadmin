@@ -7612,10 +7612,10 @@ button.toast-close-button {
     -webkit-opacity: 1;
     -moz-opacity: 1;
     opacity: 1;
-    -webkit-transition: all 800ms ease-in-out;
-    -moz-transition: all 800ms ease-in-out;
-    -o-transition: all 800ms ease-in-out;
-    transition: all 800ms ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 .page-loading-overlay.loaded,.loader.loaded,.load_circle_wrapper.loaded {

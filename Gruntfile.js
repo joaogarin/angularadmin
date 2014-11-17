@@ -91,7 +91,7 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     hostname: 'localhost',
-                    port: 8080
+                    port: 8888
                 }
             }
         },
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
         watch: {
             dev: {
                 files: [ 'Gruntfile.js', 'app/*.js', '*.html' ],
-                tasks: [ 'jshint','html2js:dist', 'concat:dist', 'clean:temp' ],
+                tasks: [ 'jshint','html2js:dist', 'concat:dist', 'clean:temp','cssmin' ],
                 options: {
                     atBegin: true
                 }
