@@ -4608,6 +4608,18 @@ input.input-danger:focus {
     }
 }
 
+@media (max-width:350px){
+    .top-header .top-nav .nav-right{
+        margin-left:0;
+    }
+    .top-header .menu-button{
+        margin-left:10px;
+    }
+    .top-header .top-nav .nav-left > li.nav-profile > a, .top-header .top-nav .nav-right > li.nav-profile > a {
+        padding: 10px 5px;
+    }
+}
+
 .top-header .top-nav .nav-left>li a:hover, .top-header .top-nav .nav-left>li a:focus, .top-header .top-nav .nav-right>li a:hover, .top-header .top-nav .nav-right>li a:focus {
     text-decoration: none;
 }
