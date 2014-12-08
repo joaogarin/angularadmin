@@ -191,164 +191,42 @@ mark, .mark {
   padding: .2em;
 }
 
-.text-primary {
-  color: $orange;
-}
-
-a.text-primary:hover {
-  color: $green;
-}
-
-.text-success {
-  color: $green;
-}
-
-a.text-success:hover {
-  color: $green;
-}
-
-.text-info {
-  color: $blue;
-}
-
-a.text-info:hover {
-  color: $blue;
-}
-
-.text-warning {
-  color: $warning;
-}
-
-a.text-warning:hover {
-  color: $warning;
-}
-
-.text-danger {
-  color: $danger;
-}
-
-a.text-danger:hover {
-  color: $danger;
-}
+$text-colors:(
+    primary:$orange,
+    theme:$orange,
+    success:$green,
+    info:$blue,
+    warning:$warning,
+    danger:$danger,
+    violet:$info-alt,
+    dark:$blue-dark
+);
 
 
-.bg-theme {
-  background-color: $orange;
-  color: #fff;
-}
+@each $text-class, $text-color in $text-colors{
+  .text-#{$text-class} {
+    color: $text-color;
+  }
 
-.bg-primary {
-  color: #fff;
-}
+  a.text-#{$text-class}:hover{
+    color: $text-color;
+  }
 
-.bg-primary {
-  background-color: $orange;
-}
+  a.bg-#{$text-class} {
+    background-color: $text-color;
+    color: #fff;
+  }
 
+  a.bg-#{$text-class}:hover {
+    background-color: $text-color;
+    color: #fff;
+  }
 
-a.bg-primary {
-  background-color: $orange;
-  color: #fff;
-}
+  .bg-#{$text-class} {
+    background-color: $text-color;
+    color: #fff;
+  }
 
-a.bg-primary:hover {
-  background-color: $orange;
-  color: #fff;
-}
-
-a.bg-success {
-  background-color: $green;
-  color: #fff;
-}
-
-a.bg-success:hover {
-  background-color: $green;
-  color: #fff;
-}
-
-a.bg-info {
-  background-color: $blue;
-  color: #fff;
-}
-
-a.bg-info:hover {
-  background-color: $blue;
-  color: #fff;
-}
-
-a.bg-warning {
-  background-color: $warning;
-  color: #fff;
-}
-
-a.bg-warning:hover {
-  background-color: $warning;
-  color: #fff;
-}
-
-a.bg-danger {
-  background-color: $danger;
-  color: #fff;
-}
-
-a.bg-danger:hover {
-  background-color: $danger;
-  color: #fff;
-}
-
-a.bg-orange {
-  background-color: #ef9549;
-  color: #fff;
-}
-
-a.bg-orange:hover {
-  background-color: #ef9549;
-  color: #fff;
-}
-
-.bg-primary {
-  background-color: $orange;
-  color: #fff;
-}
-
-.bg-primary-light {
-  background-color: #5bdddc;
-  color: #fff;
-}
-
-.bg-success {
-  background-color: $green;
-  color: #fff;
-}
-
-.bg-info {
-  background-color: $blue;
-  color: #fff;
-}
-
-.bg-warning {
-  background-color: $warning;
-  color: #fff;
-}
-
-.bg-danger {
-  background-color: $danger;
-  color: #fff;
-}
-
-.bg-orange {
-  background-color: #ef9549;
-  color: #fff;
-}
-
-.bg-violet {
-  background-color: $info-alt;
-  color: #fff;
-}
-
-.bg-dark {
-  background-color: #242633;
-  color: #fff;
 }
 
 .bg-bright {
@@ -361,36 +239,6 @@ a.bg-orange:hover {
   color: #767676;
 }
 
-.bg-facebook {
-  background-color: #335397;
-  color: #fff;
-}
-.bg-facebook:hover{
-  color:#fff;
-}
-.bg-linkedin {
-  background-color: #4875B4;
-  color: #fff;
-}
-.bg-linkedin:hover{
-  color:#fff;
-}
-.bg-twitter {
-  background-color: #00c7f7;
-  color: #fff;
-}
-
-.bg-twitter:hover{
-  color:#fff;
-}
-
-.bg-google-plus {
-  background-color: #df4a32;
-  color: #fff;
-}
-.bg-google-plus:hover{
-  color:#fff;
-}
 
 blockquote {
   border-left: 5px solid $orange;
@@ -464,32 +312,24 @@ pre {
   font-weight: 100;
 }
 
-.color-primary {
-  color: $orange;
-}
+$text-colors:(
+    primary:$orange,
+    theme:$orange,
+    success:$green,
+    info:$blue,
+    warning:$warning,
+    danger:$danger,
+    info-alt:$info-alt,
+    dark:$blue-dark
+);
 
-.color-success {
-  color: $green;
-}
 
-.color-info {
-  color: $blue;
-}
+@each $text-class, $text-color in $text-colors{
 
-.color-info-alt {
-  color: $info-alt;
-}
+  .color-#{$text-class} {
+    color: $text-color;
+  }
 
-.color-warning {
-  color: $warning;
-}
-
-.color-danger {
-  color: $danger;
-}
-
-.color-dark {
-  color: #242633;
 }
 
 .color-reverse {
@@ -1469,44 +1309,25 @@ textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control, .input
   top: 10px;
 }
 
-input.input-primary {
-  border-color: $orange;
-}
+$input-colors:(
+  primary:$orange,
+  theme:$orange,
+  success:$green,
+  info:$blue,
+  warning:$warning,
+  danger:$danger,
+  violet:$info-alt,
+  dark:$blue-dark
+);
 
-input.input-primary:focus {
-  border-color: $orange;
-}
+@each $input-class,$input-color in $input-colors{
+  input.input-#{$input-class} {
+    border-color: $input-color;
+  }
 
-input.input-info {
-  border-color: $blue;
-}
-
-input.input-info:focus {
-  border-color: $blue;
-}
-
-input.input-success {
-  border-color: $orange;
-}
-
-input.input-success:focus {
-  border-color: $orange;
-}
-
-input.input-warning {
-  border-color: $warning;
-}
-
-input.input-warning:focus {
-  border-color: $warning;
-}
-
-input.input-danger {
-  border-color: $danger;
-}
-
-input.input-danger:focus {
-  border-color: $danger;
+  input.input-#{$input-class}:focus {
+    border-color: $input-color;
+  }
 }
 
 .drop-box {
@@ -1898,11 +1719,11 @@ input.input-danger:focus {
 }
 
 .ui-accordion-dark .panel {
-  border: 1px solid #242633;
+  border: 1px solid $blue-dark;
 }
 
 .ui-accordion-dark .panel-heading {
-  background-color: #242633;
+  background-color: $blue-dark;
   color: #fff;
 }
 
@@ -2667,7 +2488,7 @@ input.input-danger:focus {
   cursor: pointer;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: #242633;
+  color: $blue-dark;
   background-color: #fff;
 }
 
@@ -2682,7 +2503,7 @@ input.input-danger:focus {
 }
 
 .ui-tags-input .autocomplete .suggestion-item em {
-  color: #242633;
+  color: $blue-dark;
   background-color: white;
 }
 
@@ -2784,174 +2605,71 @@ input.input-danger:focus {
   background-color: #767676;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: $orange;
+$button-styles:(
+  primary:$orange,
+  success:$green,
+  info:$blue,
+  warning:$warning,
+  danger:$danger
+);
+
+@each $button, $btn-color in $button-styles {
+
+  .btn-#{$button} {
+    color: #fff;
+    background-color: $btn-color;
+  }
+
+  .btn-#{$button}:hover,
+  .btn-#{$button}:focus,
+  .btn-#{$button}:active,
+  .btn-#{$button}.active,
+  .open>.btn-#{$button}.dropdown-toggle {
+    color: #fff;
+    background-color: $btn-color;
+    border-color: $btn-color;
+
+  }
+
+  .btn-#{$button}:focus,
+  .btn-#{$button}:active{
+    border: 1px solid #fff;
+    @include box-shadow(0px 0px 1px 1px $btn-color);
+    outline: 0px auto $btn-color;
+    outline-offset: -2px;
+  }
+
+  .btn-#{$button}:active,
+  .btn-#{$button}.active,
+  .open>.btn-#{$button}.dropdown-toggle {
+    background-image: none;
+  }
+
+  .btn-#{$button}.disabled,
+  .btn-#{$button}.disabled:hover,
+  .btn-#{$button}.disabled:focus,
+  .btn-#{$button}.disabled:active,
+  .btn-#{$button}.disabled.active,
+  .btn-#{$button}[disabled],
+  .btn-#{$button}[disabled]:hover,
+  .btn-#{$button}[disabled]:focus,
+  .btn-#{$button}[disabled]:active,
+  .btn-#{$button}[disabled].active,
+  fieldset[disabled] .btn-#{$button},
+  fieldset[disabled] .btn-#{$button}:hover,
+  fieldset[disabled] .btn-#{$button}:focus,
+  fieldset[disabled] .btn-#{$button}:active,
+  fieldset[disabled] .btn-#{$button}.active {
+    background-color: $btn-color;
+    border-color:$btn-color;
+  }
+
+  .btn-#{$button} .badge {
+    color: $btn-color;
+    background-color: #fff;
+  }
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.btn-primary.dropdown-toggle {
-  color: #fff;
-  background-color: $orange;
-  border-color: $orange;
-
-}
-
-
-.btn-primary:focus, .btn-primary:active{
-  border: 1px solid #fff;
-  @include box-shadow(0px 0px 1px 1px $orange);
-  outline: 0px auto $orange;
-  outline-offset: -2px;
-}
-
-.btn-primary:active, .btn-primary.active, .open>.btn-primary.dropdown-toggle {
-  background-image: none;
-}
-
-.btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
-  background-color: $orange;
-  border-color:$orange;
-}
-
-.btn-primary .badge {
-  color: $orange;
-  background-color: #fff;
-}
-
-.btn-success {
-  color: #fff;
-  background-color: $green;
-}
-
-.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.btn-success.dropdown-toggle {
-  color: #fff;
-  background-color: $green;
-  border-color: $green;
-
-}
-
-.btn-success:focus, .btn-success:active{
-  border: 1px solid white;
-  @include box-shadow(0px 0px 1px 1px $green);
-  outline: 0px auto $green;
-  outline-offset: -2px;
-}
-
-.btn-success:active, .btn-success.active, .open>.btn-success.dropdown-toggle {
-  background-image: none;
-}
-
-.btn-success.disabled, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled:active, .btn-success.disabled.active, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled]:active, .btn-success[disabled].active, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.active {
-  background-color: $green;
-  border-color: $green;
-}
-
-.btn-success .badge {
-  color: $orange;
-  background-color: #fff;
-}
-
-.btn-info {
-  color: #fff;
-  background-color: $blue;
-}
-
-.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open>.btn-info.dropdown-toggle {
-  color: #fff;
-  background-color: $blue;
-  border-color:$blue;
-}
-
-
-.btn-info:focus, .btn-info:active{
-  border: 1px solid white;
-  @include box-shadow(0px 0px 1px 1px $blue);
-  outline: 0px auto $blue;
-  outline-offset: -2px;
-}
-
-
-.btn-info:active, .btn-info.active, .open>.btn-info.dropdown-toggle {
-  background-image: none;
-}
-
-.btn-info.disabled, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info[disabled], .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled]:active, .btn-info[disabled].active, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info.active {
-  background-color: $blue;
-  border-color: $blue;
-}
-
-.btn-info .badge {
-  color: $blue;
-  background-color: #fff;
-}
-
-.btn-warning {
-  color: #fff;
-  background-color: $warning;
-}
-
-.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open>.btn-warning.dropdown-toggle {
-  color: #fff;
-  background-color: $warning;
-  border-color:$warning;
-}
-
-
-.btn-warning:focus, .btn-warning:active{
-  border: 1px solid white;
-  @include box-shadow(0px 0px 1px 1px $warning);
-  outline: 0px auto $warning;
-  outline-offset: -2px;
-  
-}
-
-.btn-warning:active, .btn-warning.active, .open>.btn-warning.dropdown-toggle {
-  background-image: none;
-}
-
-.btn-warning.disabled, .btn-warning.disabled:hover, .btn-warning.disabled:focus, .btn-warning.disabled:active, .btn-warning.disabled.active, .btn-warning[disabled], .btn-warning[disabled]:hover, .btn-warning[disabled]:focus, .btn-warning[disabled]:active, .btn-warning[disabled].active, fieldset[disabled] .btn-warning, fieldset[disabled] .btn-warning:hover, fieldset[disabled] .btn-warning:focus, fieldset[disabled] .btn-warning:active, fieldset[disabled] .btn-warning.active {
-  background-color: $warning;
-  border-color: $warning;
-}
-
-.btn-warning .badge {
-  color: $warning;
-  background-color: #fff;
-}
-
-.btn-danger {
-  color: #fff;
-  background-color: $danger;
-}
-
-.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open>.btn-danger.dropdown-toggle {
-  color: #fff;
-  background-color: #e24f25;
-  border-color:#e24f25;
-}
-
-
-.btn-danger:focus, .btn-danger:active{
-  border: 1px solid white;
-  @include box-shadow(0px 0px 1px 1px #e24f25);
-  outline: 0px auto #e24f25;
-  outline-offset: -2px;
-}
-
-
-.btn-danger:active, .btn-danger.active, .open>.btn-danger.dropdown-toggle {
-  background-image: none;
-}
-
-.btn-danger.disabled, .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled:active, .btn-danger.disabled.active, .btn-danger[disabled], .btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled]:active, .btn-danger[disabled].active, fieldset[disabled] .btn-danger, fieldset[disabled] .btn-danger:hover, fieldset[disabled] .btn-danger:focus, fieldset[disabled] .btn-danger:active, fieldset[disabled] .btn-danger.active {
-  background-color: $danger;
-  border-color: $danger;
-}
-
-.btn-danger .badge {
-  color: $danger;
-  background-color: #fff;
-}
 
 .btn-link {
   color: #333;
@@ -3005,7 +2723,7 @@ input.input-danger:focus {
 
 .btn-dark {
   color: #fff;
-  background-color: #242633;
+  background-color: $blue-dark;
   border-color: #191b24;
 }
 
@@ -3028,12 +2746,12 @@ input.input-danger:focus {
 }
 
 .btn-dark.disabled, .btn-dark.disabled:hover, .btn-dark.disabled:focus, .btn-dark.disabled:active, .btn-dark.disabled.active, .btn-dark[disabled], .btn-dark[disabled]:hover, .btn-dark[disabled]:focus, .btn-dark[disabled]:active, .btn-dark[disabled].active, fieldset[disabled] .btn-dark, fieldset[disabled] .btn-dark:hover, fieldset[disabled] .btn-dark:focus, fieldset[disabled] .btn-dark:active, fieldset[disabled] .btn-dark.active {
-  background-color: #242633;
+  background-color: $blue-dark;
   border-color: #191b24;
 }
 
 .btn-dark .badge {
-  color: #242633;
+  color: $blue-dark;
   background-color: #fff;
 }
 
@@ -3142,12 +2860,12 @@ input.input-danger:focus {
 
 .btn-bordered-dark:hover, .btn-bordered-dark:focus, .btn-bordered-dark:active, .btn-bordered-dark.active {
   color: #fff;
-  background-color: #242633;
+  background-color: $blue-dark;
 }
 
 .open .btn-bordered-dark.dropdown-toggle {
   color: #fff;
-  background-color: #242633;
+  background-color: $blue-dark;
 }
 
 .btn-direction {
@@ -3432,232 +3150,47 @@ input.input-danger:focus {
   line-height: 45px;
 }
 
-.btn-twitter {
-  color: #fff;
-  background-color: #00c7f7;
-  border-color: #00c7f7;
-}
+$social-profiles: (
+  twitter: #00c7f7,
+  facebook: #335397,
+  google-plus: #dd4a38,
+  gplus: #dd4a38,
+  instagram:#82685a,
+  vimeo:#63879c,
+  flickr:#0061db,
+  github:#3b3b3b,
+  pinterest:#bc2725,
+  tumblr:#586980,
+  linkedin:#018faf,
+  dribble:#ea73a0,
+  stumbleupon:#ea4b24,
+  lastfm:#b80638,
+  evernote:#3bab27,
+  skype:#skype,
+  soundcloud:#06f,
+  behance:#b80638,
+  rss:#f79638,
+  youtube:#cc181e
+);
 
-.btn-twitter:hover {
-  color: #fff;
-  background-color: #00a6ce;
-  border-color: #0096ba;
-}
+@each $profile, $bgcolor in $social-profiles {
+  .btn-#{$profile},
+  .btn-#{$profile}:focus,
+  .btn-#{$profile}:hover {
+    color: #fff;
+    background: $bgcolor;
+    border-color:$bgcolor;
+  }
 
-.btn-facebook {
-  color: #fff;
-  background-color: #335397;
-  border-color: #335397;
-}
+  .bg-#{$profile} {
+    background-color: $bgcolor;
+    color: #fff;
+  }
 
-.btn-facebook:hover {
-  color: #fff;
-  background-color: #294279;
-  border-color: #243a69;
-}
+  .bg-#{$profile}:hover{
+    color:#fff;
+  }
 
-.btn-gplus, .btn-google-plus {
-  color: #fff;
-  background-color: #dd4a38;
-  border-color: #dd4a38;
-}
-
-.btn-gplus:hover, .btn-google-plus:hover {
-  color: #fff;
-  background-color: #ca3522;
-  border-color: #b8301f;
-}
-
-.btn-instagram {
-  color: #fff;
-  background-color: #82685a;
-  border-color: #82685a;
-}
-
-.btn-instagram:hover {
-  color: #fff;
-  background-color: #6a5549;
-  border-color: #5e4b41;
-}
-
-.btn-vimeo {
-  color: #fff;
-  background-color: #63879c;
-  border-color: #63879c;
-}
-
-.btn-vimeo:hover {
-  color: #fff;
-  background-color: #537183;
-  border-color: #4b6777;
-}
-
-.btn-flickr {
-  color: #fff;
-  background-color: #0061db;
-  border-color: #0061db;
-}
-
-.btn-flickr:hover {
-  color: #fff;
-  background-color: #004fb2;
-  border-color: #00469e;
-}
-
-.btn-github {
-  color: #fff;
-  background-color: #3b3b3b;
-  border-color: #3b3b3b;
-}
-
-.btn-github:hover {
-  color: #fff;
-  background-color: #272727;
-  border-color: #1c1c1c;
-}
-
-.btn-pinterest {
-  color: #fff;
-  background-color: #d73532;
-  border-color: #d73532;
-}
-
-.btn-pinterest:hover {
-  color: #fff;
-  background-color: #bc2725;
-  border-color: #ab2421;
-}
-
-.btn-tumblr {
-  color: #fff;
-  background-color: #586980;
-  border-color: #586980;
-}
-
-.btn-tumblr:hover {
-  color: #fff;
-  background-color: #475568;
-  border-color: #3f4b5c;
-}
-
-.btn-linkedin {
-  color: #fff;
-  background-color: #018faf;
-  border-color: #018faf;
-}
-
-.btn-linkedin:hover {
-  color: #fff;
-  background-color: #016e86;
-  border-color: #015d72;
-}
-
-.btn-dribbble {
-  color: #fff;
-  background-color: #ea73a0;
-  border-color: #ea73a0;
-}
-
-.btn-dribbble:hover {
-  color: #fff;
-  background-color: #e55088;
-  border-color: #e23e7c;
-}
-
-.btn-stumbleupon {
-  color: #fff;
-  background-color: #ea4b24;
-  border-color: #ea4b24;
-}
-
-.btn-stumbleupon:hover {
-  color: #fff;
-  background-color: #d13914;
-  border-color: #bf3412;
-}
-
-.btn-lastfm {
-  color: #fff;
-  background-color: #b80638;
-  border-color: #b80638;
-}
-
-.btn-lastfm:hover {
-  color: #fff;
-  background-color: #90052c;
-  border-color: #7d0426;
-}
-
-.btn-evernote {
-  color: #fff;
-  background-color: #3bab27;
-  border-color: #3bab27;
-}
-
-.btn-evernote:hover {
-  color: #fff;
-  background-color: #308a1f;
-  border-color: #2a791c;
-}
-
-.btn-skype {
-  color: #fff;
-  background-color: #00b0f6;
-  border-color: #00b0f6;
-}
-
-.btn-skype:hover {
-  color: #fff;
-  background-color: #0093cd;
-  border-color: #0084b9;
-}
-
-.btn-soundcloud {
-  color: #fff;
-  background-color: #06f;
-  border-color: #06f;
-}
-
-.btn-soundcloud:hover {
-  color: #fff;
-  background-color: #0056d6;
-  border-color: #004ec2;
-}
-
-.btn-behance {
-  color: #fff;
-  background-color: #b80638;
-  border-color: #b80638;
-}
-
-.btn-behance:hover {
-  color: #fff;
-  background-color: #90052c;
-  border-color: #7d0426;
-}
-
-.btn-rss {
-  color: #fff;
-  background-color: #f79638;
-  border-color: #f79638;
-}
-
-.btn-rss:hover {
-  color: #fff;
-  background-color: #f58111;
-  border-color: #e87709;
-}
-
-.btn-youtube {
-  color: #fff;
-  background-color: #cc181e;
-  border-color: #cc181e;
-}
-
-.btn-youtube:hover {
-  color: #fff;
-  background-color: #a71419;
-  border-color: #951216;
 }
 
 .btn-metro {
@@ -3713,24 +3246,23 @@ input.input-danger:focus {
   top: -1px;
 }
 
-.badge-primary {
-  background-color: $orange;
-}
+$badge-colors:(
+    primary:$orange,
+    theme:$orange,
+    success:$green,
+    info:$blue,
+    warning:$warning,
+    danger:$danger,
+    violet:$info-alt
+);
 
-.badge-success {
-  background-color: $green;
-}
 
-.badge-info {
-  background-color: $blue;
-}
+@each $badge-class, $badge-color in $text-colors{
 
-.badge-warning {
-  background-color: $warning;
-}
+  .badge-#{$badge-class} {
+    background-color: $badge-color;
+  }
 
-.badge-danger {
-  background-color: $danger;
 }
 
 /************************************
@@ -3768,11 +3300,11 @@ input.input-danger:focus {
 }
 
 .dropdown-menu.dropdown-dark {
-  background-color: #242633;
+  background-color: $blue-dark;
 }
 
 .dropdown-menu.dropdown-dark.with-arrow:after {
-  border-bottom: 7px solid #242633;
+  border-bottom: 7px solid $blue-dark;
 }
 
 .dropdown-menu.dropdown-dark>li>a {
@@ -5618,26 +5150,26 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 
 .panel-dark {
-  border-color: #242633;
+  border-color: $blue-dark;
 }
 
 .panel-dark>.panel-heading {
   color: #fff;
-  background-color: #242633;
-  border-color: #242633;
+  background-color: $blue-dark;
+  border-color: $blue-dark;
 }
 
 .panel-dark>.panel-heading+.panel-collapse>.panel-body {
-  border-top-color: #242633;
+  border-top-color: $blue-dark;
 }
 
 .panel-dark>.panel-heading .badge {
-  color: #242633;
+  color: $blue-dark;
   background-color: #fff;
 }
 
 .panel-dark>.panel-footer+.panel-collapse>.panel-body {
-  border-bottom-color: #242633;
+  border-bottom-color: $blue-dark;
 }
 
 .panel-box {
@@ -6716,7 +6248,7 @@ img.img80_80 {
   position: absolute;
   display: none;
   @include border-radius(0px);
-  background: #242633;
+  background: $blue-dark;
   color: #fff;
   font-size: smaller;
   padding: 3px;
@@ -6726,7 +6258,7 @@ img.img80_80 {
   position: absolute;
   left: 10px;
   @include border-radius(0px);
-  background: #242633;
+  background: $blue-dark;
   padding: 3px;
   color: #fff;
   cursor: pointer;
@@ -7344,7 +6876,7 @@ button.toast-close-button {
 
 .page-signin .info h2, .page-signup .info h2, .page-forgot .info h2 {
   font-size: 18px;
-  color: #242633;
+  color: $blue-dark;
 }
 
 .page-signin .form-container, .page-signup .form-container, .page-forgot .form-container {
