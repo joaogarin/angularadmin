@@ -9,7 +9,6 @@ var app = angular.module("app", ["ngRoute", "ngAnimate", "ui.bootstrap", "easypi
         $(window).load(function(){
 
             setTimeout(function(){
-                $('.loader').addClass("loaded");
                 $('.page-loading-overlay').addClass("loaded");
                 $('.load_circle_wrapper').addClass("loaded");
             },1000);
@@ -21,7 +20,13 @@ var app = angular.module("app", ["ngRoute", "ngAnimate", "ui.bootstrap", "easypi
         return $routeProvider.when("/", {
             redirectTo: "/dashboard"
         }).when("/dashboard", {
-                templateUrl: "app/views/dashboard.html"
+                templateUrl: "app/views/dashboards/dashboard.html"
+            }).when("/dashboard/dashboard", {
+                templateUrl: "app/views/dashboards/dashboard.html"
+            }).when("/dashboard/dashboard2", {
+                templateUrl: "app/views/dashboards/dashboard2.html"
+            }).when("/dashboard/dashboard3", {
+                templateUrl: "app/views/dashboards/dashboard3.html"
             }).when("/ui/typography", {
                 templateUrl: "app/views/ui_elements/typography.html"
             }).when("/ui/buttons", {
@@ -306,18 +311,19 @@ angular.module("app.map", []).directive("uiJqvmap", [
                 backgroundColor: null,
                 color: "#ffffff",
                 hoverOpacity: 0.7,
-                selectedColor: "#2693E9",
+                selectedColor: "#db5031",
+                hoverColor: "#db5031",
                 enableZoom: !0,
                 showTooltip: !0,
                 values: sample_data,
-                scaleColors: ["#87C2F0", "#1373BE"],
+                scaleColors: ["#F1EFF0", "#c1bfc0"],
                 normalizeFunction: "polynomial"
             }, $scope.USAMap = {
                 map: "usa_en",
                 backgroundColor: null,
                 color: "#ffffff",
-                hoverColor: "#2693E9",
-                selectedColor: "#2693E9",
+                selectedColor: "#db5031",
+                hoverColor: "#db5031",
                 enableZoom: !0,
                 showTooltip: !0,
                 selectedRegion: "MO"
@@ -326,11 +332,12 @@ angular.module("app.map", []).directive("uiJqvmap", [
                 backgroundColor: null,
                 color: "#ffffff",
                 hoverOpacity: 0.7,
-                hoverColor: "#2693E9",
+                selectedColor: "#db5031",
+                hoverColor: "#db5031",
                 enableZoom: !0,
                 showTooltip: !0,
                 values: sample_data,
-                scaleColors: ["#87C2F0", "#1373BE"],
+                scaleColors: ["#F1EFF0", "#c1bfc0"],
                 normalizeFunction: "polynomial"
             };
         }

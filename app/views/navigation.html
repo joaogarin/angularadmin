@@ -2,7 +2,7 @@
 <!-- Logo -->
 <div class="logo" data-ng-controller="AdminAppCtrl">
     <a href="#/">
-        <i class="logo-icon fa fa-cube"></i>
+        <i class="logo-icon fa fa-slack"></i>
         <span>{{info.theme_name}}</span>
     </a>
 </div>
@@ -12,7 +12,14 @@
         data-slim-scroll
         data-collapse-nav
         data-highlight-active>
-        <li><a href="#/dashboard"> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li>
+            <a href="#/dashboard"> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+            <ul>
+                <li><a href="#/dashboard/dashboard"><i class="fa fa-angle-right"></i><span> Dashboard 1</span></a></span></li>
+                <li><a href="#/dashboard/dashboard2"><i class="fa fa-angle-right"></i><span> Dashboard 2</span></a></li>
+                <li><a href="#/dashboard/dashboard3"><i class="fa fa-angle-right"></i><span> Dashboard 3</span></a></li>
+            </ul>
+        </li>
         <li>
             <a href="#/ui"><i class="fa fa-magic"></i><span>Ui Elements</span></a>
             <ul>

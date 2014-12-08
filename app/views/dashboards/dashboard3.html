@@ -1,3 +1,45 @@
+<header class="page-main-header">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h4>
+                Dashboard 3
+            </h4>
+            <p>
+                Dashboard with different widgets and format
+            </p>
+        </div>
+        <div class="col-sm-6">
+
+            <div class="col-sm-6 text-right">
+                <p class="text-muted medium">
+                    1920 Visitors / week
+                </p>
+                <div data-ng-controller="sparklineCtrl">
+                    <span data-sparkline
+                          data-spark-data="simpleChart2long.sparkData"
+                          data-spark-options="simpleChart2long.sparkOptions"
+                            ></span>
+                </div>
+            </div>
+
+            <div class="col-sm-6 text-right">
+                <p class="text-muted medium">
+                    2065 buyers / week
+                </p>
+                <div data-ng-controller="sparklineCtrl">
+                    <span data-sparkline
+                          data-spark-data="simpleChartlong.sparkData"
+                          data-spark-options="simpleChartlong.sparkOptions"
+                            ></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</header>
+
 <div class="page page-dashboard" data-ng-controller="DashboardCtrl">
 
     <section>
@@ -9,11 +51,18 @@
                 <div class="panel panel-default">
 
                     <div class="panel-body">
+
+                        <div class="choices">
+
+                        </div>
+
                         <div data-flot-chart
                              data-data="line1.data"
                              data-options="line1.options"
                              style="width: 100%; height: 300px;"
                                 ></div>
+
+
                     </div>
                 </div>
 

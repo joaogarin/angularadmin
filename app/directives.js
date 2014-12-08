@@ -72,6 +72,33 @@ angular.module("app.chart.directives", []).directive("gaugeChart", [
                 },
                 link: function(scope, ele) {
                     var data, options, plot;
+
+
+                    // hard-code color indices to prevent them from shifting as
+                    // countries are turned on/off
+
+                    var datasets;
+
+                    datasets = scope.data;
+
+                    var i = 0;
+                    $.each(datasets, function(key, val) {
+                        val.color = i;
+                        ++i;
+                    });
+
+                    // insert checkboxes
+
+                    if($(ele[0]).parent().find(".choices").length > 0){
+
+
+
+                    }
+
+
+
+                    //plotAccordingToChoices();
+
                     return data = scope.data, options = scope.options, plot = $.plot(ele[0], data, options);
                 }
             };
@@ -120,17 +147,20 @@ angular.module("app.chart.directives", []).directive("gaugeChart", [
                         },
                         yaxis: {
                             min: 0,
-                            max: 100
+                            max: 100,
+                            show: !0,
+                            color:"#f5f5f5"
                         },
                         xaxis: {
-                            show: !1
+                            show: !0,
+                            color:"#f5f5f5"
                         },
                         grid: {
                             hoverable: !0,
                             borderWidth: 1,
-                            borderColor: "#eeeeee"
+                            borderColor: "#fff"
                         },
-                        colors: ["#2693E9"]
+                        colors: ["#383d43"]
                     }), update();
                 }
             };
@@ -370,7 +400,7 @@ angular.module("app.directives", []).directive("imgHolder", [
             return {
                 link: function(scope, ele) {
                     return ele.on("click", function() {
-                        return $("#app").toggleClass("on-canvas");
+                        return $("#app").toggleClass("on-canvas").toggleClass("nav-min");
                     });
                 }
             };
