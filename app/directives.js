@@ -91,7 +91,38 @@ angular.module("app.chart.directives", []).directive("gaugeChart", [
 
                     if($(ele[0]).parent().find(".choices").length > 0){
 
+                        // insert checkboxes
+                        var choiceContainer = $(ele[0]).parent().find(".choices");
 
+                        choiceContainer.html("");
+
+                        $.each(datasets, function(key, val) {
+
+                            choiceContainer.append("<br/><div class='choice-item'><label for='id" + key + "' class='ui-checkbox'>" +
+                            "<input name='" + key +
+                            "' type='checkbox' id='id" + key + "' checked='checked' value='option1'>" +
+                            "<span>" + val.label + "</span>" +
+                            "</label></div>");
+
+                        });
+
+                        var plotAccordingToChoices = function() {
+
+                            var data_to_push = [];
+
+                            choiceContainer.find("input:checked").each(function () {
+                                var key = $(this).attr("name");
+                                if (key && datasets[key]) {
+                                    data_to_push.push(datasets[key]);
+                                }
+                            });
+
+                            if (data_to_push.length > 0) {
+                                $.plot(ele[0], data_to_push, scope.options);
+                            }
+                        };
+
+                        choiceContainer.find("input").click(plotAccordingToChoices);
 
                     }
 
