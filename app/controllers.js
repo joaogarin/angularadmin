@@ -1286,7 +1286,7 @@ angular.module("app.tables", []).controller("tableCtrl", ["$scope", "$filter",
             return $scope.row !== rowName ? ($scope.row = rowName, $scope.filteredStores = $filter("orderBy")($scope.stores, rowName), $scope.onOrderChange()) : void 0;
         }, $scope.numPerPageOpt = [3, 5, 10, 20], $scope.numPerPage = $scope.numPerPageOpt[2], $scope.currentPage = 1, $scope.currentPageStores = [], (init = function() {
             return $scope.search(), $scope.select($scope.currentPage);
-        });
+        }), $scope.search();
     }
 ]);
 
