@@ -5699,7 +5699,8 @@ img.img80_80 {
   background: url(../images/background/cloud.png); }
 
 .bg-weather i {
-  color: white; }
+  color: white;
+  line-height: 0px; }
 
 .icon-dashboard {
   display: inline-block;

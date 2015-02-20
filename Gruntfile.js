@@ -1,7 +1,6 @@
 /*jslint node: true */
 "use strict";
 
-
 module.exports = function(grunt) {
 
     grunt.initConfig({
@@ -18,10 +17,52 @@ module.exports = function(grunt) {
             }
         },
 
+        copy: {
+            main: {
+                files: [{
+                    //for bootstrap fonts
+                    expand: true,
+                    dot: true,
+                    cwd: 'bower_components/jquery/dist',
+                    src: ['jquery.min.js','jquery.min.map'],
+                    dest: 'dist/js'
+                },{
+                    //for bootstrap fonts
+                    expand: true,
+                    dot: true,
+                    cwd: 'bower_components/bootstrap/dist',
+                    src: ['fonts/*.*'],
+                    dest: 'dist'
+                },{
+                    //for weather fonts
+                    expand: true,
+                    dot: true,
+                    cwd: 'bower_components/weather-icons',
+                    src: ['font/*.*'],
+                    dest: 'dist'
+                },{
+                    //for font-awesome
+                    expand: true,
+                    dot: true,
+                    cwd: 'bower_components/font-awesome',
+                    src: ['fonts/*.*'],
+                    dest: 'dist'
+                },
+                {
+                    //for Images
+                    expand: true,
+                    dot: true,
+                    cwd: 'images',
+                    src: ['*.*','background/*'],
+                    dest: 'dist/images'
+                }]
+            }
+        },
+
         uglify: {
             dist: {
                 files: {
-                    'dist/app.js': [ 'dist/app.js' ]
+                    'dist/js/app.js': [ 'dist/js/app.js' ]
                 },
                 options: {
                     mangle: false,
@@ -32,7 +73,13 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    'dist/main.css': ['styles/main.css']
+                    'dist/css/main.css': [
+                        'bower_components/fontawesome/css/font-awesome.min.css',
+                        'bower_components/weather-icons/css/weather-icons.min.css',
+                        'bower_components/bootstrap/dist/css/bootstrap.min.css',
+                        'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
+                        'styles/main.css'
+                    ]
                 }
             },
             add_banner: {
@@ -40,7 +87,7 @@ module.exports = function(grunt) {
                     banner: '/* My minified admin css file */'
                 },
                 files: {
-                    'dist/main.css': ['dist/main.css']
+                    'dist/css/main.css': ['dist/css/main.css']
                 }
             }
         },
@@ -63,23 +110,41 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['scripts/vendor/gmap.js',
-                    'scripts/vendor/angular.min.js',
-                    'scripts/vendor/angular-animate.min.js',
-                    'scripts/vendor/angular-route.min.js',
-                    'scripts/vendor/underscore-min.js',
-                    'scripts/vendor/rocha.js',
-                    'scripts/vendor/raphael.min.js',
-                    'scripts/vendor/morris.min.js',
-                    'scripts/vendor/flot_compiled.js',
-                    'scripts/vendor/Chart.min.js',
-                    'scripts/vendor/other_charts.js',
-                    'scripts/vendor/angular-wizard.js',
-                    'scripts/vendor/angular-ui-tree.js',
-                    'scripts/vendor/jquery.vmap.min.js',
+                src: ['bower_components/bootstrap/dist/js/bootstrap.min.js',
+                    'scripts/gmap.js',
+                    'bower_components/slimScroll/jquery.slimscroll.min.js',
+                    'bower_components/angular/angular.min.js',
+                    'bower_components/angular-animate/angular-animate.min.js',
+                    'bower_components/angular-route/angular-route.min.js',
+                    'bower_components/angular-sanitize/angular-sanitize.min.js',
+                    'bower_components/underscore/underscore-min.js',
+                    'bower_components/raphael/raphael-min.js',
+                    'bower_components/morrisjs/morris.min.js',
+                    'bower_components/flot/jquery.flot.js',
+                    'bower_components/flot/jquery.flot.canvas.js',
+                    'bower_components/flot/jquery.flot.categories.js',
+                    'bower_components/flot/jquery.flot.crosshair.js',
+                    'bower_components/flot/jquery.flot.image.js',
+                    'bower_components/flot/jquery.flot.navigate.js',
+                    'bower_components/flot/jquery.flot.time.js',
+                    'bower_components/flot/jquery.flot.pie.js',
+                    'bower_components/flot/jquery.flot.resize.js',
+                    'bower_components/flot/jquery.flot.selection.js',
+                    'bower_components/flot/jquery.flot.stack.js',
+                    'bower_components/chartjs/Chart.min.js',
+                    'bower_components/jquery.sparkline.build/dist/jquery.sparkline.min.js',
+                    'bower_components/easypie/dist/angular.easypiechart.min.js',
+                    'bower_components/angular-wizard/dist/angular-wizard.js',
+                    'bower_components/rangy/rangy-core.min.js',
+                    'bower_components/rangy/rangy-selectionsaverestore.min.js',
+                    'bower_components/textAngular/dist/textAngular.min.js',
+                    'bower_components/angular-ui-tree/dist/angular-ui-tree.js',
+                    'bower_components/jqvmap/jqvmap/jquery.vmap.min.js',
+                    'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+                    'scripts/other_charts.js',
                     'scripts/extras.js',
                     'app/*.js' ],
-                dest: 'dist/app.js'
+                dest: 'dist/js/app.js'
             }
         },
 
@@ -99,14 +164,14 @@ module.exports = function(grunt) {
         watch: {
             dev: {
                 files: [ 'Gruntfile.js', 'app/*.js', '*.html','styles/*.scss' ],
-                tasks: [ 'jshint','html2js:dist', 'concat:dist', 'clean:temp','cssmin' ],
+                tasks: [ 'jshint','html2js:dist','copy:main', 'concat:dist', 'clean:temp','cssmin' ],
                 options: {
                     atBegin: true
                 }
             },
             min: {
                 files: [ 'Gruntfile.js', 'app/*.js', '*.html','styles/*.scss' ],
-                tasks: [ 'jshint','html2js:dist', 'concat:dist', 'clean:temp', 'uglify:dist','cssmin' ],
+                tasks: [ 'jshint','html2js:dist','copy:main', 'concat:dist', 'clean:temp', 'uglify:dist','cssmin' ],
                 options: {
                     atBegin: true
                 }
@@ -135,6 +200,7 @@ module.exports = function(grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-connect');
