@@ -139,7 +139,7 @@ module.exports = function(grunt) {
                     'bower_components/rangy/rangy-selectionsaverestore.min.js',
                     'bower_components/textAngular/dist/textAngular.min.js',
                     'bower_components/angular-ui-tree/dist/angular-ui-tree.js',
-                    'bower_components/jqvmap/jqvmap/jquery.vmap.min.js',
+                    'bower_components/jqvmap/dist/jquery.vmap.min.js',
                     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
                     'scripts/other_charts.js',
                     'scripts/extras.js',
